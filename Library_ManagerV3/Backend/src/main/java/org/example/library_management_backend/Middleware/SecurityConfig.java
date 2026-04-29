@@ -1,4 +1,4 @@
-package org.example.library_management_backend.Configuration;
+package org.example.library_management_backend.Middleware;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

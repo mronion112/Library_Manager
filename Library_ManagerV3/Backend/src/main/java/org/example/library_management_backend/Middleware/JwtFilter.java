@@ -1,4 +1,4 @@
-package org.example.library_management_backend.Configuration;
+package org.example.library_management_backend.Middleware;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

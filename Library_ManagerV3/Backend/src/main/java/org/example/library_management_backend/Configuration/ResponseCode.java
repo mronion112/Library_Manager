@@ -6,7 +6,9 @@ import org.springframework.http.HttpStatus;
 public enum ResponseCode {
     SUCCESS(200, "Success"),
     NOT_FOUND(404, "Not Found"),
+    UNAUTHORIZED(405, "Unauthorized"),
     ERROR(500, "Error");
+
 
     private final int code;
     private final String message;
@@ -20,7 +22,7 @@ public enum ResponseCode {
         return this.code;
     }
 
-    public String getMessage(){
+    public String getMessage(){ 
         return this.message;
     }
 

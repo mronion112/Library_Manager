@@ -50,8 +50,8 @@ public class User {
     @Column(name = "role", nullable = false)
     private Role Role;
 
-   @OneToMany(mappedBy = "IdUser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-   private List<BorrowBook> listBorrowBook;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<BorrowBook> listBorrowBook;
 
 
 

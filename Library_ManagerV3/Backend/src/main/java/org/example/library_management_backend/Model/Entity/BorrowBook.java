@@ -1,6 +1,5 @@
 package org.example.library_management_backend.Model.Entity;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -10,7 +9,10 @@ import lombok.*;
 @Setter
 @ToString
 @AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class BorrowBook {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
@@ -27,12 +29,7 @@ public class BorrowBook {
     @Column(name = "QuantityBorrow")
     private Integer QuantityBorrow;
 
-    @Column(name = "IdBook")
-    private Integer IdBook;
 
     @Column(name = "isDelete")
-    private double isDelete;
-
-
-
+    private Boolean isDelete;
 }

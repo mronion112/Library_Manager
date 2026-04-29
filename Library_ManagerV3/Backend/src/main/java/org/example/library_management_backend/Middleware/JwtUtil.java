@@ -1,4 +1,4 @@
-package org.example.library_management_backend.Configuration;
+package org.example.library_management_backend.Middleware;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.security.Keys;
@@ -10,8 +10,8 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
-    private static final String SECRET = "MrOnion21102006Password";
-    private static final long EXPIRATION_MS = 86400000; // 1 day
+    private static final String SECRET = "MrOnion21102006Password!!Secured";
+    private static final long EXPIRATION_MS = 86400000L; // 1 day
     private final Key key = Keys.hmacShaKeyFor(SECRET.getBytes());
 
     public String generateToken(String username, String role) {

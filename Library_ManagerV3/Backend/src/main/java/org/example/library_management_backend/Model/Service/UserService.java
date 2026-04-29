@@ -30,11 +30,17 @@ public class UserService
         return userRepository.findById(Id)
                 .orElseThrow(() -> new UserNotFoundException("Không tìm thấy User Id " + Id));
     }
+    public User findByUsername(String username) {
+        return (User) userRepository.findByUserName(username)
+                .orElseThrow(() -> new UserNotFoundException("Không tìm thấy User: " + username));
+    }
+
 
     public void deleteUserById(int Id){
         userRepository.deleteById(Id);
 
     }
+
 
     public List<User> getAllUsers(){
         return userRepository.findAll();
