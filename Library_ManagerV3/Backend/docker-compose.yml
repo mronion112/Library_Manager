@@ -1,0 +1,37 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: spring_app
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mariadb://db:3306/Library_Management
+      SPRING_DATASOURCE_USERNAME: mronion
+      SPRING_DATASOURCE_PASSWORD: 080502
+    depends_on:
+      - db
+    networks:
+      - backend
+
+  db:
+    image: mariadb:11
+    container_name: spring_mariadb
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 080502
+      MARIADB_DATABASE: Library_Management
+      MARIADB_USER: mronion
+      MARIADB_PASSWORD: 080502
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    networks:
+      - backend
+
+volumes:
+  mariadb_data:
+
+networks:
+  backend:
